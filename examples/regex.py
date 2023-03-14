@@ -26,6 +26,10 @@ import re
 # print(x)
 
 
-txt = "The rain in Spain"           #Search any words that starts with "S"
-x = re.search(r"\bS\w+", txt)
-print(x.span())                     # span() for return start-end index
+# txt = "The rain in Spain"           #Search any words that starts with "S"
+# x = re.search(r"\bS\w+", txt)
+# print(x.span())                     # span() for return start-end index
+
+
+regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'     #Validate email
+x = re.fullmatch(regex, "kk234@gmail.com")

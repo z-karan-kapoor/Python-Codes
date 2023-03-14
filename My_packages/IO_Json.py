@@ -1,15 +1,17 @@
-class IO:
-    def __init__(self,path,data=None):
-        self.data=data
-        self.path=path
+import json
 
-    def readJson(self):
-        with open(self.path,'r+') as file:
-            print(file.read())
+class jsonIO:
+    def __init__(self, path, data=None):  # constructor
+        self.data = data
+        self.path = path
 
-    
-def TestIO(path):
-    obj=IO(path)
+    def readJson(self):  # function to read JSON file
+        with open(self.path, 'r+') as file:
+            print(json.load(file))
+
+
+def testIO(path):          # function for testing
+    obj = jsonIO(path)
     obj.readJson()
 
-# TestIO("Desktop/PyPackages/data/sample.json")
+testIO("Desktop/PyPackages/data/sample.json")
