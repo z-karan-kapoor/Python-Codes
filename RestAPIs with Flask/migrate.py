@@ -32,4 +32,7 @@ if __name__=="__main__":
     db_session.add(shop)
     stock=Stocks(id=2,item_id=item.id,shop_id=shop.id,unit_count=2,unit_price=4.8)
     db_session.add(stock)
-    db_session.commit()
+    try:
+        db_session.commit()
+    except Exception as e:
+        print(f"Error: Unable to commt DB. Please Try Again")

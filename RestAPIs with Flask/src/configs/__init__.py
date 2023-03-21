@@ -12,5 +12,4 @@ config={"dev": Dev_Config, "prod": Prod_Config}
 def init_app(app):
     app_settings = os.getenv("APP_SETTINGS")
     app.config.from_object(config[app_settings])
-    # print(app_settings)
     return app
